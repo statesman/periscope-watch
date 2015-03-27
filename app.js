@@ -2,6 +2,7 @@ var Twit = require('twit'),
     Slack = require('slack-node'),
     util = require('util');
 
+
 /*~ Setup Twitter and Slack API instances ~*/
 
 var T = new Twit({
@@ -13,6 +14,7 @@ var T = new Twit({
 
 var slack = new Slack();
 slack.setWebhook(process.env.SLACK_URL);
+
 
 /*~ Fire up the stream and post to Slack when someone periscopes ~*/
 
@@ -51,3 +53,11 @@ function handleTweet(tweet) {
     if(err) return console.error(err);
   });
 }
+
+
+/*~ A really generic page to tell people to go away ~*/
+
+require('http').createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Nothing to see here.\n');
+}).listen(process.env.PORT);

@@ -1,0 +1,24 @@
+{
+  "name": "Periscope Watch",
+  "description": "Get Slack notifications when someone from a specific Twitter list starts streaming on Periscope.",
+  "env": {
+    "CONSUMER_KEY": {
+      "description": "Twitter API consumer key"
+    },
+    "CONSUMER_SECRET": {
+      "description": "Twitter API consumer secret"
+    },
+    "ACCESS_TOKEN": {
+      "description": "Twitter API access token"
+    },
+    "ACCESS_TOKEN_SECRET": {
+      "description": "Twitter API access token secret"
+    },
+    "SLACK_URL": {
+      "description": "A URL to an incoming Slack webhook"
+    },
+    "TWITTER_LIST": {
+      "description": "The Twitter list to track in the format owner/list-slug"
+    }
+  }
+}
